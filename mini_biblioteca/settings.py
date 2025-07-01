@@ -28,6 +28,16 @@ DEBUG = config('DEBUG',default=False,cast=bool)
 
 ALLOWED_HOSTS = []
 
+RENDER_EXTERNAL_HOSTNAME = config('RENDER_EXTERNAL_HOSTNAME',default=None)
+
+
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+
+IS_RENDER = config('IS_RENDER',default=False,cast=bool)
+
+if IS_RENDER:
+    ALLOWED_HOSTS.append(config('RENDER_INSTANCE_ID',default='localhost'))
 
 # Application definition
 
