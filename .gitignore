@@ -1,0 +1,8 @@
+.venv/
+.env
+deb.sqlite3
+
+--pycache--/
+.pytest_cache/
+
+staticfile/
